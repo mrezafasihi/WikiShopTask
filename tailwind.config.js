@@ -6,6 +6,7 @@ export default {
       colors: {
         customColor: {
           green: "#5FED2F",
+          darkGreen: " #0E5445",
         },
       },
     },

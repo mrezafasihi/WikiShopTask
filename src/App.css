@@ -1,0 +1,19 @@
+.button-calc-active {
+  @apply border bg-customColor-darkGreen  rounded-[43px] text-white text-sm;
+}
+.button-calc {
+  @apply border text-sm text-customColor-darkGreen border-customColor-darkGreen rounded-[43px];
+}
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  margin-top: -12px;
+  background-image: url("../public/images/Slider\ Control.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  position: relative;
+  top: 5px;
+  width: 100px;
+  height: 200px;
+}
