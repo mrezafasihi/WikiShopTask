@@ -2,7 +2,7 @@ import React from "react";
 
 function Navbar() {
   return (
-    <nav className="flex justify-between py-[20px] items-center shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] px-[8%] ">
+    <nav className="flex justify-between py-[20px] items-center shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] px-[8%] w-full ">
       <ul className="hidden lg:flex h-[76px]  items-center space-x-8">
         <li className="ml-4">
           <svg

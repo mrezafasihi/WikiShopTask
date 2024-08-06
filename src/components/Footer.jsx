@@ -9,7 +9,7 @@ function Footer() {
   ];
 
   return (
-    <div className="bg-[#0E5445] flex flex-col justify-center items-center lg:justify-between lg:flex-row text-white px-[8%] py-[2%]">
+    <div className="bg-[#0E5445] flex flex-col justify-center items-center lg:justify-between lg:flex-row text-white px-[8%] py-[2%] w-full">
       <div>
         <h6>دریافت برنامه:</h6>
         <div className="flex w-[415px] justify-between flex-wrap ">

@@ -1,32 +1,55 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 import CustomeButton from "../helper/CustomeButton";
-
+import rtlPlugin from "stylis-plugin-rtl";
+import InputLabel from "@mui/material/InputLabel";
+import FormControl from "@mui/material/FormControl";
+import Select from "@mui/material/Select";
+import Popop from "./calculator/Popop";
 function Calculator() {
   const [chooseMonth, setChooseMonth] = useState(0);
   const [chooseRoutingPay, setChooseRoutingPay] = useState(null);
+  const [price, setPrice] = useState(1234567000);
+  const [openModal, setOpenModal] = useState(false);
   return (
     <div className="border max-w-[580px] mx-auto rounded-[15px] [&>*]:flex [&>*]:justify-between space-y-5 px-[3.45%]">
+      <Popop open={openModal} setOpen={setOpenModal}  />
       <div>
-        
+        <FormControl fullWidth>
+          <InputLabel id="demo-simple-select-label" stylisPlugins={[rtlPlugin]}>
+            انتخاب خودرو
+          </InputLabel>
+          <Select
+            stylisPlugins={[rtlPlugin]}
+            labelId="demo-simple-select-label"
+            id="demo-simple-select"
+            label="انتخاب خودرو"
+            onClick={() => setOpenModal(true)}
+          ></Select>
+        </FormControl>
       </div>
       <div className="flex-col">
         <div className="flex  justify-between w-full">
-          <p>پیش پرداخت:</p>
+          <p className="font-semibold text-sm">پیش پرداخت:</p>
           <p>
-            ۱٬۲۳۴٬۵۶۷٬۰۰۰<span>ت</span>
+            <span className="font-normal mr-1">{price}ت</span>
           </p>
         </div>
         <div className="">
           <input
             className="w-full appearance-none bg-[#A5A3A3] h-[3px] rounded cursor-pointer "
             type="range"
+            onChange={(e) => setPrice(e.target.value)}
+            min={100000000}
+            max={90000000000}
+            step={1000000}
+            defaultValue={12000000}
           />
         </div>
       </div>
       <hr />
       <div>
-        <p>مدت زمان بازپرداخت:</p>
-        <div>
+        <p className="font-semibold text-sm">مدت زمان بازپرداخت:</p>
+        <div className="w-[236px]  flex justify-between ">
           <CustomeButton
             onClick={() => setChooseMonth(12)}
             title={"۱۲ ماهه"}
@@ -52,7 +75,7 @@ function Calculator() {
       </div>
       <hr />
       <div>
-        <p>فاصله‌ی اقساط:</p>
+        <p className="font-semibold text-sm">فاصله‌ی اقساط:</p>
         <CustomeButton
           onClick={() => setChooseRoutingPay(1)}
           title={"ماهانه"}
